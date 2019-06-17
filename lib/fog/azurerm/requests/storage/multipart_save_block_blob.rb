@@ -59,7 +59,8 @@ module Fog
             # Initiate the upload
             Fog::Logger.debug "Creating the block blob #{container_name}/#{blob_name}. options: #{options}"
             content_md5 = options.delete(:content_md5)
-            create_block_blob(container_name, blob_name, nil, options)
+            # This is failing and doesn't seem to be necessary anymore so commenting out - Jimmy
+            # create_block_blob(container_name, blob_name, nil, options)
 
             # Uploading parts
             Fog::Logger.debug "Starting to upload parts for the block blob #{container_name}/#{blob_name}."
